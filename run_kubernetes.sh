@@ -4,18 +4,17 @@
 
 # Step 1:
 # This is your Docker ID/path
-dockerpath=singuyen027/project5::v1.0.0
+# dockerpath=<>
+dockerpath="vuthaiminh98/minhvt9:v1.0.0"
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run project5 --image=singuyen027/project5:v1.0.0 --port=8080
+kubectl run minhvt9 --image=vuthaiminh98/minhvt9:v1.0.0 --port=8080
 
 # Step 3:
 # List kubernetes pods
-
 kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward udacity 8000:80
-
+kubectl port-forward minhvt9 8080:80

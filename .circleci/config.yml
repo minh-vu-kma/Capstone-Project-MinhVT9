@@ -118,8 +118,8 @@ jobs:
       - checkout
       - run: |
           echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
-      - run: docker build -t singuyen027/project5:$CIRCLE_BRANCH .
-      - run: docker push singuyen027/project5:$CIRCLE_BRANCH
+      - run: docker build -t vuthaiminh98/minhvt9:$CIRCLE_BRANCH .
+      - run: docker push vuthaiminh98/minhvt9:$CIRCLE_BRANCH
 
 
   deploy-container-to-eks:

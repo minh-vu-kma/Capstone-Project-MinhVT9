@@ -6,12 +6,12 @@
 # Step 1:
 # Create dockerpath
 # dockerpath=<your docker ID/path>
-dockerpath="singuyen027/project5:v1.0.0"
+dockerpath="vuthaiminh98/minhvt9:v1.0.0"
 
 # Step 2:  
 # Authenticate & tag
 docker login
-docker tag project5 $dockerpath
+docker tag minhvt9 $dockerpath
 echo "Docker ID and Image: $dockerpath"
 
 # Step 3:
