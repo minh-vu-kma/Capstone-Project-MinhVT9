@@ -157,6 +157,7 @@ jobs:
             aws eks --region us-east-1 update-kubeconfig --name Prod
             kubectl apply -f kubernetes/loadbalancer.yaml
             kubectl apply -f kubernetes/deployment.yaml
+            kubectl create secret docker-registry vuthaiminh98 --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-server=https://index.docker.io/v1/
 
       - run:
           name: Rolling Restart
