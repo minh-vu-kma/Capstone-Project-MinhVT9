@@ -179,6 +179,6 @@ workflows:
           requires: [lint-code]
       - deploy-container-to-eks:
           requires: [build-image]
-          filters:
-            branches:
-              only: [test-feature-branch]
+          # filters:
+          #   branches:
+          #     only: [test-feature-branch]
