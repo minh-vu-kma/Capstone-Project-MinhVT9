@@ -153,6 +153,7 @@ jobs:
       - run:
           name: Deploy To Kubernetes Cluster
           command: |
+            aws sts get-caller-identity
             aws eks --region us-east-1 update-kubeconfig --name Prod
             kubectl apply -f kubernetes/loadbalancer.yaml
             kubectl apply -f kubernetes/deployment.yaml
@@ -168,17 +169,17 @@ jobs:
 workflows:
   default:
     jobs:
-      - deploy-infrastructure:
-          filters:
-            branches:
-              only: [deploy-infrastructure]
-      - start-build
-      - lint-code:
-          requires: [start-build]
-      - build-image:
-          requires: [lint-code]
-      - deploy-container-to-eks:
-          requires: [build-image]
+      - deploy-infrastructure
+          # filters:
+          #   branches:
+          #     only: [deploy-infrastructure]
+      # - start-build
+      # - lint-code:
+      #     requires: [start-build]
+      # - build-image:
+      #     requires: [lint-code]
+      # - deploy-container-to-eks:
+      #     requires: [build-image]
           # filters:
           #   branches:
           #     only: [test-feature-branch]
