@@ -169,6 +169,7 @@ jobs:
             kubectl get deployment
             kubectl get pod
             kubectl get services
+            kubectl get pod
 
 workflows:
   default:
