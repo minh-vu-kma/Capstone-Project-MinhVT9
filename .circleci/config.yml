@@ -157,14 +157,18 @@ jobs:
             aws eks --region us-east-1 update-kubeconfig --name Prod
             kubectl apply -f kubernetes/loadbalancer.yaml
             kubectl apply -f kubernetes/deployment.yaml
-            kubectl get nodes
-            kubectl get deployment
-            kubectl get pod
-            kubectl get services
+            
       - run:
           name: Rolling Restart
           command: |
             kubectl rollout restart deployment udacity-capstone
+      - run:
+          name: Test
+          command: |
+            kubectl get nodes
+            kubectl get deployment
+            kubectl get pod
+            kubectl get services
 
 workflows:
   default:
