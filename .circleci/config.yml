@@ -169,7 +169,7 @@ jobs:
 workflows:
   default:
     jobs:
-      - deploy-infrastructure
+      - deploy-infrastructure:
           filters:
             branches:
               only: [deploy-infrastructure]
