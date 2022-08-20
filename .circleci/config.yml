@@ -170,9 +170,9 @@ workflows:
   default:
     jobs:
       - deploy-infrastructure
-          # filters:
-          #   branches:
-          #     only: [deploy-infrastructure]
+          filters:
+            branches:
+              only: [deploy-infrastructure]
       - start-build
       - lint-code:
           requires: [start-build]
@@ -180,6 +180,6 @@ workflows:
           requires: [lint-code]
       - deploy-container-to-eks:
           requires: [build-image]
-          # filters:
-          #   branches:
-          #     only: [test-feature-branch]
+          filters:
+            branches:
+              only: [test-deploy]
