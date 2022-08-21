@@ -14,8 +14,10 @@ spec:
     spec:
       containers:
       - name: udacity-capstone
-        image: vuthaiminh98/minhvt9:master
-        imagePullPolicy: Always
+        image: vuthaiminh98/minhvt9:main
         ports:
         - containerPort: 9090
           name: default-port
+      imagePullSecrets:
+      - name: vuthaiminh98
+      

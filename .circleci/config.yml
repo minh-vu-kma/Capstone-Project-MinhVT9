@@ -155,9 +155,9 @@ jobs:
           command: |
             aws sts get-caller-identity
             aws eks --region us-east-1 update-kubeconfig --name Prod
+            kubectl create secret docker-registry vuthaiminh98 --docker-username=$DOCKER_USERNAME --docker-password=$DOCKER_PASSWORD --docker-server=https://index.docker.io/v1/ || true
             kubectl apply -f kubernetes/loadbalancer.yaml
             kubectl apply -f kubernetes/deployment.yaml
-            
       - run:
           name: Rolling Restart
           command: |
@@ -165,9 +165,9 @@ jobs:
       - run:
           name: Test
           command: |
+            kubectl get secret
             kubectl get nodes
             kubectl get deployment
-            kubectl get pod
             kubectl get services
             kubectl get pod
 
