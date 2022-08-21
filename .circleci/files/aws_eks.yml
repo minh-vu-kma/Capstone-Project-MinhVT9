@@ -13,7 +13,7 @@ Resources:
     Type: AWS::EC2::SecurityGroup
     Properties:
       GroupName: !Sub ${WorkflowID}
-      GroupDescription: Allow port 3030 and port 3030.
+      GroupDescription: Allow port all TCP.
       Tags:
         - Key: Environment
           Value: !Ref WorkflowID
